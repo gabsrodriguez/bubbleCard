@@ -7,25 +7,25 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Lilita+One&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="./4geeks.ico"></head>
-    <body onclick="bubbleSort(numbers)">
-       
+    
+    <body>
        <div class="title">
             <h1 class="pageTitle text-center">Bubble Sort Card Generator</h1>
        </div>
        <div class="input text-center">
-            <input type="input">
-            <button class="button1">Draw</button>
-            <button class="button2">Sort</button>
+            <input id="input" type="input">
+            <button onclick="draw()" class="button1">Draw</button>
+            <button onclick="sort()" class="button2">Sort</button>
        </div>
 
        
-        <div class="container text-center">
+        <div id= "cardContainer" class="container text-center">
             <div class="card" style="width: 9rem; height: 10rem;">
-                <div id="cardHeader" class="cardHeader">placeholder</div>
-                <div id="cardCenter" class="card-body">
-                    <h2 class="card-text">sup<h2>
+                <div id="cardHeader" class="card-header"></div>
+                <div  class="card-center">
+                    <h2 id="cardCenter"class="card-text"><h2>
                 </div>
-                <div id="cardFooter" class="cardfooter">placeholder</div>
+                <div id="cardFooter" class="card-footer"></div>
             </div>
         </div>
 
@@ -33,45 +33,27 @@
 
 <script>
 
+function draw(){
+
+    let header = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
+    let body = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];    
+    let colors = ["red", "black"] 
+
+    let headerSuites = header[Math.floor(Math.random() * header.length)];
+    let bodyNumbers = body[Math.floor(Math.random() * body.length)];
 
 
-
-
-
-
-
-
-
-
- <!-- let numbers = [3, 1, 6, 8, 4, 9, 2, 5, 7];
-
-const bubbleSort = (arr) => {
-  let wall = arr.length - 1;
-  while (wall > 0) {
-    let index = 0;
-    while (index < wall) {
-      if (arr[index] > arr[index + 1]) {
-        let aux = arr[index];
-        arr[index] = arr[index + 1];
-        arr[index + 1] = aux;
-      }
-      index++;
-    }
-    wall--;
-  }
-      console.log(arr)
-  
-  for (number in arr){
-      document.querySelector("#cardCenter").innerHTML += `<div class="card">${arr[number]}</div>`
-  }
-
-    
-}; -->
-
-
-
-
+        document.querySelector("#cardHeader").innerHTML= headerSuites;
+        document.querySelector("#cardFooter").innerHTML= headerSuites;
+        document.querySelector("#cardCenter").innerHTML= bodyNumbers;
+        document.querySelector("#cardContainer").style.color= colors[Math.floor(Math.random() * colors.length)]
+        
+        let inputValue = document.querySelector("#input").value 
+        console.log(inputValue)
+}
 </script>
+
         <!-- do not remove this bundle.js tag -->
-        <script type="text/javascript" src="./bundle.js"></script></body>
+        <script type="text/javascript" src="./bundle.js"></script>
+</body>
 </html>
