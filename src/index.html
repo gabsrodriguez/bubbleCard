@@ -6,15 +6,40 @@
         <title>Hello Rigo with Vanilla.js</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         <link rel="shortcut icon" href="./4geeks.ico"></head>
-    <body>
-        <div class="container-fluid text-center">
-            <h1 class="mt-5">Hello Rigo!</h1>
-            <img src="./rigo-baby.jpg"></img>
-            <p class="alert alert-warning mt-4">If this text is <b>not</b> centered and <b>yellow</b>, you probably have an error</p>
-            <div class="fixed-bottom p-4">
-                Made with ❤️ by <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <body onclick="bubbleSort()">
+        <div class="container text-center">
+            <div class="card" style="width: 10rem; height: 12rem;">
+                <div id="cardHeader" class="cardHeader">placeholder</div>
+                <div id="cardCenter" class="card-body">
+                    <h1 class="card-text">sup<h1>
+                </div>
+                <div id="cardFooter" class="cardfooter">placeholder</div>
             </div>
         </div>
+
+    <script>
+      let numbers = [3,1,6,8,4,9,2,5,7];
+                
+                const bubbleSort = (arr) => {
+                  let wall = arr.length - 1; 
+                    while (wall > 0){
+                        let index = 0;
+                            while (index < wall) {
+                                if (arr[index] > arr[index + 1]) { 
+                                    let aux = arr[index]; 
+                                    arr[index] = arr[index + 1];
+                                    arr[index + 1] = aux;
+                                }
+                                    console.log("ahhhh")
+                                index++;
+                            }
+                            wall--; 
+                        }
+                    return arr;
+                };
+
+           bubbleSort(numbers)     
+    </script>
 
 
         <!-- do not remove this bundle.js tag -->
