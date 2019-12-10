@@ -5,43 +5,73 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Hello Rigo with Vanilla.js</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lilita+One&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="./4geeks.ico"></head>
-    <body onclick="bubbleSort()">
+    <body onclick="bubbleSort(numbers)">
+       
+       <div class="title">
+            <h1 class="pageTitle text-center">Bubble Sort Card Generator</h1>
+       </div>
+       <div class="input text-center">
+            <input type="input">
+            <button class="button1">Draw</button>
+            <button class="button2">Sort</button>
+       </div>
+
+       
         <div class="container text-center">
-            <div class="card" style="width: 10rem; height: 12rem;">
+            <div class="card" style="width: 9rem; height: 10rem;">
                 <div id="cardHeader" class="cardHeader">placeholder</div>
                 <div id="cardCenter" class="card-body">
-                    <h1 class="card-text">sup<h1>
+                    <h2 class="card-text">sup<h2>
                 </div>
                 <div id="cardFooter" class="cardfooter">placeholder</div>
             </div>
         </div>
 
-    <script>
-      let numbers = [3,1,6,8,4,9,2,5,7];
-                
-                const bubbleSort = (arr) => {
-                  let wall = arr.length - 1; 
-                    while (wall > 0){
-                        let index = 0;
-                            while (index < wall) {
-                                if (arr[index] > arr[index + 1]) { 
-                                    let aux = arr[index]; 
-                                    arr[index] = arr[index + 1];
-                                    arr[index + 1] = aux;
-                                }
-                                    console.log("ahhhh")
-                                index++;
-                            }
-                            wall--; 
-                        }
-                    return arr;
-                };
+    
 
-           bubbleSort(numbers)     
-    </script>
+<script>
 
 
+
+
+
+
+
+
+
+
+
+ <!-- let numbers = [3, 1, 6, 8, 4, 9, 2, 5, 7];
+
+const bubbleSort = (arr) => {
+  let wall = arr.length - 1;
+  while (wall > 0) {
+    let index = 0;
+    while (index < wall) {
+      if (arr[index] > arr[index + 1]) {
+        let aux = arr[index];
+        arr[index] = arr[index + 1];
+        arr[index + 1] = aux;
+      }
+      index++;
+    }
+    wall--;
+  }
+      console.log(arr)
+  
+  for (number in arr){
+      document.querySelector("#cardCenter").innerHTML += `<div class="card">${arr[number]}</div>`
+  }
+
+    
+}; -->
+
+
+
+
+</script>
         <!-- do not remove this bundle.js tag -->
         <script type="text/javascript" src="./bundle.js"></script></body>
 </html>
