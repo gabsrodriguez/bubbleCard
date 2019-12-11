@@ -19,37 +19,55 @@
        </div>
 
        
-        <div id= "cardContainer" class="container text-center">
-            <div class="card" style="width: 9rem; height: 10rem;">
-                <div id="cardHeader" class="card-header"></div>
-                <div  class="card-center">
-                    <h2 id="cardCenter"class="card-text"><h2>
-                </div>
-                <div id="cardFooter" class="card-footer"></div>
-            </div>
-        </div>
+        <div id= "cardContainer"></div>
 
     
 
 <script>
 
+    let deck = []
+
+
+
 function draw(){
 
+    let inputValue = document.querySelector('#input').value;
     let header = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
     let body = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];    
     let colors = ["red", "black"] 
 
     let headerSuites = header[Math.floor(Math.random() * header.length)];
     let bodyNumbers = body[Math.floor(Math.random() * body.length)];
+    let colorsRandom = colors[Math.floor(Math.random() * colors.length)]
+
+    document.querySelector("#cardContainer").innerHTML= `<div id= "cardContainer" class="container text-center">${colorsRandom}
+            <div class="card" style="width: 9rem; height: 10rem;">
+                <div id="cardHeader" class="card-header">${headerSuites}</div>
+                <div  class="card-center">
+                    <h2 id="cardCenter"class="card-text">${bodyNumbers}<h2>
+                </div>
+                <div id="cardFooter" class="card-footer">${headerSuites}</div>
+            </div>
+        </div>`
 
 
-        document.querySelector("#cardHeader").innerHTML= headerSuites;
-        document.querySelector("#cardFooter").innerHTML= headerSuites;
-        document.querySelector("#cardCenter").innerHTML= bodyNumbers;
-        document.querySelector("#cardContainer").style.color= colors[Math.floor(Math.random() * colors.length)]
-        
-        let inputValue = document.querySelector("#input").value 
-        console.log(inputValue)
+
+
+for (i=0; i < inputValue;i++){
+        for(h in headerSuites) {
+                let head = headerSuites[h];
+                for(b in bodyNumbers) {
+                    var bod = bodyNumbers[b]
+                    var card = {
+                    suit: eaderSuites,
+                    number: bodyNumbers,
+                    order: Math.floor(Math.random() * card.length)  
+                    };
+                    deck.push(card);   
+                }
+        }
+    }
+
 }
 </script>
 
